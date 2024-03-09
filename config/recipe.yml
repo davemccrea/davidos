@@ -3,7 +3,7 @@ name: davidos
 
 description: my ready-to-go OS
 
-base-image: ghcr.io/ublue-os/silverblue-main
+base-image: ghcr.io/ublue-os/sericea-main
 
 # latest is also supported if you want new updates ASAP
 image-version: 39
@@ -21,10 +21,6 @@ modules:
       - https://download.docker.com/linux/fedora/docker-ce.repo
 
     install:
-      - gnome-shell-extension-appindicator
-      - gnome-shell-extension-blur-my-shell
-      - gnome-shell-extension-dash-to-dock
-      - gnome-themes-extra
       - distrobox
       - tailscale
       - podman-compose
@@ -38,21 +34,11 @@ modules:
       - toolbox
       - firefox
       - firefox-langpacks
-      - gnome-tour
 
   - type: default-flatpaks
     notify: true
     system:
       install:
-        - org.gnome.Calculator
-        - org.gnome.Calendar
-        - org.gnome.clocks
-        - org.gnome.Contacts
-        - org.gnome.baobab
-        - org.gnome.Evince
-        - org.gnome.font-viewer
-        - org.gnome.Loupe
-        - org.gnome.Weather
         - com.bitwarden.desktop
         - org.libreoffice.LibreOffice
         - com.borgbase.Vorta
